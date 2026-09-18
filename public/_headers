@@ -1,0 +1,14 @@
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  Referrer-Policy: no-referrer
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()
+  Cross-Origin-Resource-Policy: same-origin
+  Strict-Transport-Security: max-age=31536000
+
+/_next/static/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/Mohammed-Razeen-P-Resume.pdf
+  Content-Disposition: attachment; filename="Mohammed-Razeen-P-Resume.pdf"
+  Content-Security-Policy: default-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'self'; sandbox
