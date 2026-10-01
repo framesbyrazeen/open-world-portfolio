@@ -1,0 +1,7 @@
+.portfolio-status,.engine-credit{position:fixed;left:18px;z-index:12;color:#fff4e7;background:#211b27d9;padding:9px 14px;border:1px solid #ffffff28;border-radius:3px;text-decoration:none;font:700 13px Nunito,sans-serif;backdrop-filter:blur(8px)}
+.portfolio-status{top:18px}.engine-credit{bottom:12px;font-size:10px;padding:5px 9px;opacity:.78}
+.portfolio-destinations{display:flex;flex-wrap:wrap;gap:12px;margin:28px 0}
+.portfolio-destinations button,.portfolio-destinations select{font:700 18px Nunito,sans-serif;color:#fff;background:#6e3847;border:1px solid #f6bd8666;border-radius:4px;padding:12px;cursor:pointer}
+.world-failed .portfolio-status{font-size:18px;max-width:80vw}.world-failed .game{opacity:.2;pointer-events:none}
+.js-canvas{touch-action:none}.location:focus-visible{outline:3px solid #ffd791;outline-offset:10px}
+@media(max-width:600px){.portfolio-status{left:10px;top:10px;font-size:11px;max-width:65vw}.engine-credit{left:10px;bottom:6px;font-size:9px}}

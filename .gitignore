@@ -60,3 +60,9 @@ credentials.json
 credentials*.json
 secrets.json
 secrets*.json
+
+# Nested graphics engine dependencies and generated files
+node_modules/
+reference-world/dist/
+reference-world/.env*
+.vite/

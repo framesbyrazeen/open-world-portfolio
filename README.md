@@ -1,4 +1,38 @@
-# Razeen’s Playground
+# Razeen's Open World Portfolio
+
+The current website is in **`reference-world/`**: a personalized adaptation of Bruno Simon's MIT-licensed Folio 2025, with Razeen's workshops, learning journey, and contact sculptures. Original world, artwork, vehicle, and rendering engine © 2025 Bruno Simon. The attribution and license are retained in the site and [source license](reference-world/license.md).
+
+Live site: https://framesbyrazeen.github.io/open-world-portfolio/
+
+## Current website
+
+Use Node.js 22.13 or newer. Run these commands from the repository root:
+
+```sh
+npm ci --prefix reference-world
+npm run dev
+```
+
+The development server runs at http://127.0.0.1:5176/. To test the production build at its GitHub Pages subdirectory:
+
+```sh
+npm run build:pages
+node scripts/preview-pages.mjs
+```
+
+Open http://127.0.0.1:5177/open-world-portfolio/. The build is written to `dist-pages/`. Pushes to `main` run `.github/workflows/deploy-pages.yml`, which installs the pinned dependencies inside `reference-world`, builds the site, and deploys only the generated static files.
+
+The contact sculptures link to Instagram, GitHub, LinkedIn, and `razeenp2005@gmail.com`. Each page load starts at the original entrance; in-game recovery uses the nearest safe location. The text portfolio is available at `portfolio.html`.
+
+Dependencies, generated output, local tools, credentials, environment files, private hosting metadata, and the original resume PDF are excluded from Git. No external analytics or multiplayer backend is connected. Unused uncompressed source music is kept locally outside the published assets; the world plays the included MP3 files.
+
+See [the current world's documentation](reference-world/readme.md) for controls and credits.
+
+## Earlier implementation notes
+
+The notes below describe the earlier procedural world in `app/`, which can be run with `npm run dev:legacy`. They do not describe the current GitHub Pages build.
+
+### Razeen’s Playground
 
 A full-screen interactive personal portfolio for Mohammed Razeen P, inspired by the idea of exploring a portfolio as a small game world.
 
