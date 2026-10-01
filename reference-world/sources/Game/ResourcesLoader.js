@@ -86,10 +86,10 @@ export class ResourcesLoader
             }
 
             // Error
-            const error = (_file) =>
+            const error = (_file, cause) =>
             {
                 console.log(`Resources > Couldn't load file ${_file[1]}`)
-                reject(_file[1])
+                reject(new Error(`Couldn't load resource: ${_file[1]}`, { cause }))
             }
 
             // Each file
@@ -108,15 +108,25 @@ export class ResourcesLoader
                 else
                 {
                     const loader = this.getLoader(_file[2])
-                    loader.load(
+                    const loadFile = (attempt = 0) => loader.load(
                         _file[1],
                         resource => {
                             save(_file, resource)
                             progress()
                         },
                         undefined,
-                        error
+                        cause => {
+                            // A brief network interruption should not abandon
+                            // the whole world. Permanent failures still reach
+                            // the accessible portfolio fallback.
+                            if(attempt < 2) {
+                                setTimeout(() => loadFile(attempt + 1), 500 * (attempt + 1))
+                                return
+                            }
+                            error(_file, cause)
+                        }
                     )
+                    loadFile()
                 }
             }
         })
