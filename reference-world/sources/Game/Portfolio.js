@@ -6,9 +6,11 @@ import { mergeGeometries } from 'three/addons/utils/BufferGeometryUtils.js'
 import fontData from '../data/helvetiker-bold.json'
 import { MeshDefaultMaterial } from './Materials/MeshDefaultMaterial.js'
 import { removeUnusedSocialDisplays } from './SocialDisplays.js'
+import { personalizeCircuitBranding } from './CircuitBranding.js'
 
 // Adapt licensed scenery before the engine generates the matching rigid bodies.
 export function personalizeResources(game) {
+    personalizeCircuitBranding(game.resources.areasModel.scene)
     const font = new FontLoader().parse(fontData)
     const material = new MeshDefaultMaterial({ colorNode: color('#fff0ec') })
     material.userData.prevent = true
